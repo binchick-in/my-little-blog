@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <title>My Little Blog</title>
+        <link rel="stylesheet" type="text/css" href="static/style.css">
+        <link rel="icon" href="static/favicon.ico" type="image/x-icon">
+    </head>
+    <body>
+        <div class="banner">
+            <h1><a href="/">billben.net</a><span class="blinking">_</span></h1>
+        </div>
+    <main>
+    <nav>
+        <div class="nav-wrapper">
+            <ul>
+                <li><a href="/posts">Posts</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/resume">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+        {% block content %}
+        {% endblock %}
+    </main>    
+        <script src="static/script.js"></script>
+    </body>
+</html>

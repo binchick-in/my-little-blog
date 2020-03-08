@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block content %}
+<h3>Oops! There was an error!</h3>
+<p>
+    This likely means the resource you're attemping
+    to access hasn't been developed yet.
+    Rest assured, it is under active development!
+</p>
+<p>
+    This page acts as a general error handler for
+    things that might go wrong in the application.
+    More information about this particular error is 
+    available below.
+</p>
+<hr />
+<p><pre>{{ error_message }}</pre></p>
+{% endblock %}

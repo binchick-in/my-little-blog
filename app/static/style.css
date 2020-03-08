@@ -1,0 +1,87 @@
+body {
+    font-family: Liberation Sans, Arial, sans-serif;
+    background-color: #fffaf7;
+    line-height: 1.5;
+    margin: 0;
+  }
+  main {
+    max-width: 70ch;
+    padding: 2ch;
+    margin: auto;
+  }
+  header {
+    margin-bottom: 1.5rem;
+  }
+  h1 {
+    margin-bottom: .5rem;
+  }
+  time {
+    color: #888;
+    text-decoration: italic;
+  }
+  pre {
+    white-space: pre-wrap;
+  }
+  hr {
+    margin-top: 2rem;
+  }
+  #fn {
+    font-size: 85%;
+  }
+  a {
+    color: #ff3c3c;
+    text-decoration: none;
+    outline: 0;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  ::selection {
+    /* background-color: #fff888; */
+    background-color: #1ba6e0;
+  }
+
+/* Custom */
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+nav li {
+  float: left;
+}
+
+nav li a {
+  display: block;
+  color: #333;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.banner {
+  /* background-color: #fff888; */
+  background-color: #1ba6e0;
+  padding-left: 5px;
+}
+
+.blinking{
+  animation:blinkingText 1.2s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #000;    }
+    49%{    color: #000; }
+    60%{    color: transparent; }
+    99%{    color:transparent;  }
+    100%{   color: #000;    }
+}
+
+.banner a {
+  color: black;
+}
+
+.banner a:hover {
+  text-decoration: none;
+}
