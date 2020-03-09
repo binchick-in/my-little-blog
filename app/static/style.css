@@ -29,8 +29,9 @@ body {
     font-size: 85%;
   }
   a {
-    color: #ff3c3c;
+    color: #1ba6e0;
     text-decoration: none;
+    font-weight: bold;
     outline: 0;
   }
   a:hover {
