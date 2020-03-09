@@ -6,7 +6,7 @@ run: build
 
 .PHONY: run-dev
 run-dev: build
-	docker run -it --rm -p 27000:8888 --name $(DOCKER_TAG)-container $(DOCKER_TAG)
+	docker run -it --rm -p 37000:8888 --name $(DOCKER_TAG)-container-dev $(DOCKER_TAG)
 
 .PHONY: build
 build:

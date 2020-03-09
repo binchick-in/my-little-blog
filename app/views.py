@@ -8,6 +8,10 @@ from flask import jsonify
 from flask.views import MethodView
 
 from jinja2.exceptions import TemplateNotFound
+from app.helpers import generate_page_content
+
+
+PAGE_CONTENT = generate_page_content()
 
 
 class Main(MethodView):
@@ -19,11 +23,10 @@ class Main(MethodView):
 class Page(MethodView):
 
     def get(self, page):
-        the_page = f'{page}.html'
-        try:
-            return render_template(the_page)
-        except TemplateNotFound:
+        page_object = PAGE_CONTENT.get(page)
+        if not page_object:
             abort(404)
+        return render_template('page.html', vars=page_object)
 
 
 class Post(MethodView):
