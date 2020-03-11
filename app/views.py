@@ -38,3 +38,9 @@ class Post(MethodView):
         if not post_object:
             abort(404)
         return render_template('post.html', vars=post_object)
+
+
+class Posts(MethodView):
+
+    def get(self):
+        return render_template('posts.html', content=POST_CONTENT)

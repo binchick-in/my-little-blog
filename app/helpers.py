@@ -43,4 +43,5 @@ def generate_page_content():
 
 
 if __name__ == '__main__':
-    print(generate_page_content())
+    # print(generate_page_content())
+    print(generate_post_content())

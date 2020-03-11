@@ -86,3 +86,7 @@ nav li a {
 .banner a:hover {
   text-decoration: none;
 }
+
+.posts-lists {
+  list-style-type: none;
+}

@@ -9,3 +9,5 @@ published: 2020-03-10
 
 This is the first post
 
+And this is the blog!
+
