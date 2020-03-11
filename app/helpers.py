@@ -4,7 +4,7 @@ import markdown
 
 
 def generate_post_content():
-    md = markdown.Markdown(extensions = ['full_yaml_metadata'])
+    md = markdown.Markdown(extensions = ['full_yaml_metadata', 'fenced_code'])
     current_path = pathlib.Path(__file__).parent.absolute()
     post_path = f'{current_path}/posts'
     post_objects = {}
