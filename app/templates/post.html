@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<article class="post-content">
+    <header>
+        <h2>{{ vars.meta.title }}</h2>
+    </header>
+    {{ vars.body|safe }}
+</article>
+{% endblock %}

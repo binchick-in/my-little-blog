@@ -9,9 +9,11 @@ from flask.views import MethodView
 
 from jinja2.exceptions import TemplateNotFound
 from app.helpers import generate_page_content
+from app.helpers import generate_post_content
 
 
 PAGE_CONTENT = generate_page_content()
+POST_CONTENT = generate_post_content()
 
 
 class Main(MethodView):
@@ -32,4 +34,7 @@ class Page(MethodView):
 class Post(MethodView):
 
     def get(self, post):
-        return f'You requested the {post} post'
+        post_object = POST_CONTENT.get(post)
+        if not post_object:
+            abort(404)
+        return render_template('post.html', vars=post_object)
