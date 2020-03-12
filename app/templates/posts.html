@@ -3,9 +3,11 @@
 <ul class="posts-lists">
     {% for title, meta in content.items() %}
     <li>
-        <h3><a href="/post/{{ meta.meta.path }}">{{ title }}</a></h3>
-        <h4>{{ meta.meta.published }}</h4>
+        <h3><a href="/post/{{ meta.meta.path }}">{{ meta.meta.title }}</a></h3>
+        <time>{{ meta.meta.published }}</time>
+        <p>{{ meta.meta.summary }}</p>
     </li>
+    <hr/>
     {% endfor %}
 </ul>
 {% endblock %}

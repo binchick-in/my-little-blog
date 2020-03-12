@@ -2,6 +2,7 @@
 title: Nginx Config
 path: nginx-config
 published: 2020-03-11
+summary: Utilizing the Nginx reverse proxy when running Docker
 ---
 
 Nginx is my preferred web server and I run it in a reverse proxy configuration for most of my services. The majority of my services are running in Docker containers with Nginx sending traffic to the correct container based on host headers.

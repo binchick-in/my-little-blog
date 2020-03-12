@@ -2,6 +2,7 @@
 title: Jupyter Lab Is Awesome!
 path: jupyter-lab
 published: 2020-03-11
+summary: Being able to tinker and play while I'm developing is the key to learning! JupyterLab allows me to quickly iterate on ideas.
 ---
 
 The best programming tool I have ever picked up is easily [JupyterLab](https://jupyter.org/). This amazing tool has allowed me to learn new Python concepts and libraries in a way a plain editor simply cannot. The successor to plain old Jupyter Notebooks, JupyterLab is a one stop shop for you to interact with all your individual Jupyter Notebooks.
@@ -16,7 +17,7 @@ I'll add that I am not a data scientist, I'm not using JupyterLab for fancy visu
 Alright, enough intro, let us begin!
 
 #### Prerequisites
-* Python3 (It's 2020, you better be using 3.5+ at this point)
+* Python3 (It's 2020, you better be using 3.5+ at this point, I'm using 3.7 in this guide)
 * Virtualenv (used for sandboxing your environments)
 
 #### Python Environments
@@ -39,8 +40,6 @@ mkdir -p ~/jupyter_notebooks
 ```
 
 Create your virtual environment
-
-> I'm using python3.7 in this guide!
 
 ```
 virtualenv -p python3.7 ~/pyenv/env_37
