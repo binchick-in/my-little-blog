@@ -2,14 +2,16 @@
 {% block content %}
     <article>
         <header>
-                <h1>Welcome to <i>My Little Blog</i></h1>
+                <h1>Hello World!</h1>
         </header>
-        <p>Hello World!</p>
         <p>
-            <a href="https://github.com/binchick-in/my-little-blog">My Little Blog</a> is my personal site project!
-            It is a site written in Python using the <a href="https://palletsprojects.com/p/flask/">Flask</a> framework.
-            I am excited to develop this site and add features.
+            <a href="https://github.com/binchick-in/my-little-blog" target="_blank">My Little Blog</a> is my personal site project!
+            It is a site written in Python using the <a href="https://palletsprojects.com/p/flask/" target="_blank">Flask</a> framework
+            and runs inside a Docker container. Nginx is configured as a reverse proxy and serves inbound traffic to the container.
+            The details of this setup are/will be highlighted here in the various pages of the blog <a href="/posts">posts</a> section.
         </p>
+        <p>
+            Everything on this site is a work in progress! Part of the fun is getting something started and building it along the way.</p>
         <p>
             Some basic early features I want to start on are
             pages and posts. Pages will be basic website staples like
@@ -17,6 +19,6 @@
             I'd like to have the posts be written in mardown and
             ingested into the site for render.
         </p>
-        <p>There is nothing here for now! But check back soon!</p>
+        <p>Follow my progress on <a href="https://github.com/binchick-in/my-little-blog" target="_blank">Github</a></p>
     </article>
 {% endblock %}
