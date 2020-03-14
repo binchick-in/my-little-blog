@@ -25,10 +25,11 @@ class Main(MethodView):
 class Page(MethodView):
 
     def get(self, page):
-        page_object = PAGE_CONTENT.get(page)
-        if not page_object:
+        if page not in [i.get('path') for i in PAGE_CONTENT]:
             abort(404)
-        return render_template('page.html', vars=page_object)
+        for i in PAGE_CONTENT:
+            if page == i.get('path'):
+                return render_template('page.html', vars=i)
 
 
 class Post(MethodView):
