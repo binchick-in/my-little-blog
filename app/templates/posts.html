@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 {% block content %}
 <ul class="posts-lists">
-    {% for title, meta in content.items() %}
+    {% for post in content %}
     <li>
-        <h3><a href="/post/{{ meta.meta.path }}">{{ meta.meta.title }}</a></h3>
-        <time>{{ meta.meta.published }}</time>
-        <p>{{ meta.meta.summary }}</p>
+        <h3><a href="/post/{{ post.path }}">{{ post.title }}</a></h3>
+        <time>{{ post.published }}</time>
+        <p>{{ post.summary }}</p>
     </li>
     <hr/>
     {% endfor %}

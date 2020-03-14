@@ -34,13 +34,17 @@ class Page(MethodView):
 class Post(MethodView):
 
     def get(self, post):
-        post_object = POST_CONTENT.get(post)
-        if not post_object:
+        if post not in [i.get('path') for i in POST_CONTENT]:
             abort(404)
-        return render_template('post.html', vars=post_object)
+        for i in POST_CONTENT:
+            if post == i.get('path'):
+                return render_template('post.html', vars=i)
 
 
 class Posts(MethodView):
 
     def get(self):
-        return render_template('posts.html', content=POST_CONTENT)
+        return render_template(
+            'posts.html',
+            content=sorted(POST_CONTENT, key=lambda x: x.get('published'), reverse=True)
+        )
