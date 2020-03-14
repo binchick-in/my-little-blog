@@ -1,7 +1,7 @@
 ---
 title: Jupyter Lab Is Awesome!
 path: jupyter-lab
-published: 2020-03-11
+published: 2020-01-30
 summary: Being able to tinker and play while I'm developing is the key to learning! JupyterLab allows me to quickly iterate on ideas.
 ---
 

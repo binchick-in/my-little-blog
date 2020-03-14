@@ -1,7 +1,7 @@
 ---
 title: Nginx Config
 path: nginx-config
-published: 2020-03-11
+published: 2020-01-25
 summary: Utilizing the Nginx reverse proxy when running Docker
 ---
 

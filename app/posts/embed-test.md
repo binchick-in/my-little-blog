@@ -1,7 +1,7 @@
 ---
 title: Embedding JavaScript In Markdown
 path: embedded-js-in-md
-published: 2020-03-12
+published: 2020-01-31
 summary: Embedding JS into a markdown page is very straight forward. Even embedding pure JS can be very powerful
 ---
 

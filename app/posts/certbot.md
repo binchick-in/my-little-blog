@@ -1,7 +1,7 @@
 ---
 title: Certbot Cheatsheet
 path: certbot
-published: 2020-03-11
+published: 2020-01-25
 summary: Some common tasks I tend to forget
 ---
 
