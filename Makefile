@@ -11,3 +11,7 @@ run-dev: build
 .PHONY: build
 build:
 	docker build -t $(DOCKER_TAG) .
+
+.PHONY: deploy
+deploy:
+	docker stop my-little-blog-container && docker rm my-little-blog-container && make run
