@@ -84,3 +84,7 @@ nav li a {
 .posts-lists {
   list-style-type: none;
 }
+
+code {
+  color: #880000;
+}
