@@ -13,10 +13,8 @@ def generate_post_content():
         post_obj = {}
         post_file_path = f'{post_path}/{post_file}'
         with open(post_file_path, 'r') as f:
-            md_body = md.convert(f.read())
-            md_meta = md.Meta
-            post_obj['body'] = md_body
-            post_obj.update(md_meta)
+            post_obj['body'] = md.convert(f.read())
+            post_obj.update(md.Meta)
             posts_list.append(post_obj)
     return posts_list
 
