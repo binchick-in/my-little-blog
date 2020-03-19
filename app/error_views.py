@@ -1,5 +1,9 @@
 from flask import render_template
 
 
-def general_error(err):
-    return render_template('error.html', error_message=err)
+def error_404(err):
+    return render_template('error.html', error_message=err), 404
+
+
+def error_500(err):
+    return render_template('error.html', error_message=err), 500

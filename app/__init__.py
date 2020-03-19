@@ -4,7 +4,8 @@ from app.views import Main
 from app.views import Page
 from app.views import Post
 from app.views import Posts
-from app.error_views import general_error
+from app.error_views import error_404
+from app.error_views import error_500
 from app.helpers import db
 
 
@@ -16,8 +17,8 @@ def create_app():
     app.add_url_rule('/<string:page>', view_func=Page.as_view('page'))
     app.add_url_rule('/post/<string:post>', view_func=Post.as_view('post'))  
     app.add_url_rule('/posts', view_func=Posts.as_view('posts'))
-    app.register_error_handler(404, general_error)
-    app.register_error_handler(500, general_error)
+    app.register_error_handler(404, error_404)
+    app.register_error_handler(500, error_500)
     db.init_app(app)
 
     with app.app_context():
