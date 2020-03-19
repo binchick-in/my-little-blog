@@ -3,3 +3,4 @@ uWSGI==2.0.18
 PyYAML==5.3
 Markdown==3.2.1
 markdown-full-yaml-metadata==2.0.1
+Flask-SQLAlchemy==2.4.1

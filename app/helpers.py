@@ -1,7 +1,28 @@
 import os
+import json
 import pathlib
 import markdown
+import flask
+from datetime import datetime
+from flask import request
 
+from app.models import InboundRequest
+from app.models import db
+
+
+def request_logger(req: flask.Request) -> bool:
+    req_args = json.dumps({k: v for k, v in req.args.items()})
+    new_inbound_request = InboundRequest(
+        ip_addr=req.headers.get('X-Forwarded-For'),
+        user_agent=req.headers.get('User-Agent'),
+        referer=req.headers.get('Referer'),
+        url_path=req.path,
+        request_args=req_args,
+        time_of_request=datetime.today()
+    )
+    db.session.add(new_inbound_request)
+    db.session.commit()
+    return True
 
 def generate_post_content():
     md = markdown.Markdown(extensions = ['full_yaml_metadata', 'fenced_code'])

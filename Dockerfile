@@ -10,10 +10,12 @@ RUN apt-get update && apt-get install -y \
     python3-pip && \
     apt-get clean
 
+RUN mkdir /database
 ADD requirements.txt /code/
 RUN /usr/bin/python3.7 -m pip install -r /code/requirements.txt
 ADD . /code
 WORKDIR /code
+RUN chown -R nobody /database
 USER nobody
 EXPOSE 8888
 ENTRYPOINT ["/usr/local/bin/uwsgi", "--ini", "/code/uwsgi.ini"]

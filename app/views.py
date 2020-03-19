@@ -10,6 +10,7 @@ from flask.views import MethodView
 from jinja2.exceptions import TemplateNotFound
 from app.helpers import generate_page_content
 from app.helpers import generate_post_content
+from app.helpers import request_logger
 
 
 PAGE_CONTENT = generate_page_content()
@@ -19,12 +20,14 @@ POST_CONTENT = generate_post_content()
 class Main(MethodView):
 
     def get(self):
+        request_logger(request)
         return render_template('index.html')
 
 
 class Page(MethodView):
 
     def get(self, page):
+        request_logger(request)
         if page not in [i.get('path') for i in PAGE_CONTENT]:
             abort(404)
         for i in PAGE_CONTENT:
@@ -35,6 +38,7 @@ class Page(MethodView):
 class Post(MethodView):
 
     def get(self, post):
+        request_logger(request)
         if post not in [i.get('path') for i in POST_CONTENT]:
             abort(404)
         for i in POST_CONTENT:
@@ -45,6 +49,7 @@ class Post(MethodView):
 class Posts(MethodView):
 
     def get(self):
+        request_logger(request)
         return render_template(
             'posts.html',
             content=sorted(POST_CONTENT, key=lambda x: x.get('published'), reverse=True)
