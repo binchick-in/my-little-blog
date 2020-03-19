@@ -10,7 +10,6 @@ from app.helpers import db
 
 def create_app():
     app = Flask(__name__)
-    # app.config['SECRET_KEY'] = ''
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:////database/cache.db'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
     app.add_url_rule('/', view_func=Main.as_view('home'))
