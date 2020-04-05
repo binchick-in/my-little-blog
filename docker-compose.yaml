@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  my-little-blog:
+    container_name: my-little-blog
+    build:
+      context: .
+    ports:
+      - "127.0.0.1:27000:8888"
+    volumes:
+      - /home/bill/container_storage/my-little-blog:/database/
