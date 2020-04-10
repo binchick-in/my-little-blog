@@ -18,39 +18,37 @@ POST_CONTENT = generate_post_content()
 
 
 class Main(MethodView):
-
     def get(self):
         request_logger(request)
-        return render_template('index.html')
+        return render_template("index.html")
 
 
 class Page(MethodView):
-
     def get(self, page):
         request_logger(request)
-        if page not in [i.get('path') for i in PAGE_CONTENT]:
+        if page not in [i.get("path") for i in PAGE_CONTENT]:
             abort(404)
         for i in PAGE_CONTENT:
-            if page == i.get('path'):
-                return render_template('page.html', vars=i)
+            if page == i.get("path"):
+                return render_template("page.html", vars=i)
 
 
 class Post(MethodView):
-
     def get(self, post):
         request_logger(request)
-        if post not in [i.get('path') for i in POST_CONTENT]:
+        if post not in [i.get("path") for i in POST_CONTENT]:
             abort(404)
         for i in POST_CONTENT:
-            if post == i.get('path'):
-                return render_template('post.html', vars=i)
+            if post == i.get("path"):
+                return render_template("post.html", vars=i)
 
 
 class Posts(MethodView):
-
     def get(self):
         request_logger(request)
         return render_template(
-            'posts.html',
-            content=sorted(POST_CONTENT, key=lambda x: x.get('published'), reverse=True)
+            "posts.html",
+            content=sorted(
+                POST_CONTENT, key=lambda x: x.get("published"), reverse=True
+            ),
         )
