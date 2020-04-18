@@ -7,6 +7,7 @@ from app.views import Posts
 from app.misc_views import error_404
 from app.misc_views import error_500
 from app.misc_views import health
+from app.misc_views import robots
 from app.helpers import db
 
 
@@ -19,6 +20,7 @@ def create_app():
     app.add_url_rule("/post/<string:post>", view_func=Post.as_view("post"))
     app.add_url_rule("/posts", view_func=Posts.as_view("posts"))
     app.add_url_rule("/health", view_func=health)
+    app.add_url_rule("/robots.txt", view_func=robots)
     app.register_error_handler(404, error_404)
     app.register_error_handler(500, error_500)
     db.init_app(app)
